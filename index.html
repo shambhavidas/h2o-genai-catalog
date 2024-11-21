@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>H2O.ai Catalog | GenAI Use Cases</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Roboto;
+            margin: 20px;
+        }
+        .filter-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .filter-container p {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .filterby {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .card-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #ffc107;
+        }
+        #FilterContainer {
+            margin-left: 10%;
+        }
+        .badge1 {
+            margin-right: 1%;
+            font-size: 14px;
+            background: #fda;
+            padding: 3px 9px;
+            border-radius: 5px;
+            line-height: 30px;
+        }
+        .card-title {
+            margin-top: 12px;
+            font-size: 1.2rem;
+        }
+        .js2 {
+            padding: 5px;
+            background: #ffc107;
+        }
+        .all {
+            width: 30%;
+            height: 300px;
+            padding: 20px;
+            margin-right: 2%;
+            border: 1px solid #d0d0d0;
+            margin-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .all:hover {
+            transform: scale(1.01);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            transition: all 0.2s ease-in-out;
+        }
+        .tagline {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .all {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .all {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+            }
+        }
+
+        .filter-class {
+            width: 75%;
+            margin-left: 14%;
+            margin-bottom: 3%;
+            margin-top: 5%;
+        }
+        .heading {
+            margin-top: 4%;
+            font-size: 4.75rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: -0.00833em;
+        }
+        .subheading {
+            font-size: 2.5rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 300;
+            line-height: 1.334;
+            letter-spacing: 0em;
+        }
+
+        /* Modal Styles */
+        .modal-title {
+            color: #333;
+            font-weight: 500;
+        }
+        .modal-section {
+            margin-bottom: 20px;
+        }
+        .modal-section h5 {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .modal-section ul {
+            padding-left: 20px;
+        }
+        .modal-section li {
+            margin-bottom: 5px;
+        }
+        .modal-tags {
+            margin-top: 20px;
+        }
+
+        /* Copy-Paste */
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 60px;
+            padding: 5px 15px;
+            background-color: #ffc107;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .copy-btn:hover {
+            background-color: #e0a800;
+        }
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: none;
+            z-index: 1100;
+            animation: fadeIn 0.3s, fadeOut 0.3s 1.7s;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes fadeOut {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+
+    /* Add Use-Case */
+    .add-usecase-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #ffc107;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1rem;
+        z-index: 1000;
+        text-decoration: none;
+    }
+
+    .add-usecase-btn:hover {
+        background-color: #e0a800;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .container {
+        position: relative;  /* Add this */
+    }
+
+    #contactModal .modal-body {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    #contactModal .modal-body i {
+        font-size: 3rem;
+        color: #ffc107;
+        margin-bottom: 1rem;
+    }
+
+    #contactModal .modal-body p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    #contactModal .modal-body .email {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    /* Cart */
+    .card-checkbox {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        transform: scale(1.2);
+    }
+
+    .cart-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #ffc107;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1rem;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .cart-btn:hover {
+        background-color: #e0a800;
+    }
+
+    .cart-count {
+        background-color: #fff;
+        color: #ffc107;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    #cartModal .modal-body {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .cart-item {
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    .cart-item:last-child {
+        border-bottom: none;
+    }
+
+    .cart-item-remove {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        color: #dc3545;
+        cursor: pointer;
+    }
+
+    .cart-item-remove:hover {
+        color: #bd2130;
+    }
+
+    .cart-actions {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .all {
+        padding-top: 40px; /* Increase top padding to accommodate checkbox */
+    }
+
+            /* Aadvanced Filtering */
+        .search-sort-container {
+            width: 75%;
+            margin-left: 14%;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px 35px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .sort-container {
+            width: 200px;
+        }
+
+        .counter-container {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .counter-number {
+            font-weight: bold;
+            color: #ffc107;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .search-sort-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .sort-container {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Add Use-Case Button -->
+        <button class="add-usecase-btn" onclick="showContactModal()">
+            <i class="fas fa-plus-circle"></i>
+            Add your Use-Case
+        </button>
+
+        <!-- Cart Button -->
+        <button class="cart-btn" onclick="showCartModal()" id="cartBtn" style="display: none;">
+            <i class="fas fa-shopping-cart"></i>
+            Selected Use Cases
+            <span class="cart-count">0</span>
+        </button>
+
+        <!-- Header -->
+        <div align="center" class="row">
+            <h1 class='heading'>H2O.ai <span class='js2'>Catalog</span></h1>
+            <p class='subheading'>Collection of GenAI Use Cases</p>
+        </div>
+
+        <!-- Counter -->
+        <div class="counter-container">
+            Showing <span class="counter-number" id="visibleCounter">0</span> of <span class="counter-number" id="totalCounter">0</span> use cases
+        </div>
+
+        <!-- Add Search and Sort -->
+        <div class="search-sort-container">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" class="search-input" placeholder="Search use cases..." id="searchInput">
+            </div>
+            <div class="sort-container">
+                <select class="form-select" id="sortSelect">
+                    <option value="default">Sort by</option>
+                    <option value="titleAsc">Title (A-Z)</option>
+                    <option value="titleDesc">Title (Z-A)</option>
+                    <option value="industryAsc">Industry (A-Z)</option>
+                    <option value="industryDesc">Industry (Z-A)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Filter by Industry -->
+        <div class="row g-6 filter-class">
+            <div class="col-sm-6">
+                <label for="industrySelect">Industry</label>
+                <select class="filterby form-select" id="industrySelect">
+                    <option value='all'>All</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="FinancialServices">Financial Services</option>
+                    <option value="Airlines">Airlines</option>
+                    <option value="Legal">Legal</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="PublicSector">Public Sector</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="ArtandEntertainment">Art and Entertainment</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="RetailandCPG">Retail and CPG</option>
+                    <option value="Telecommunications">Telecommunications</option>
+                    <option value="Environmental">Environmental</option>
+                    <option value="LifeSciences">Life Sciences</option>
+                    <option value="BeautyandWellness">Beauty and Wellness</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Use-Case Cards -->
+        <div class="row" id="FilterContainer"></div>
+    </div>
+
+    <!-- Use-Case Modal -->
+    <div class="modal fade" id="useCaseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button class="copy-btn" onclick="copyUseCase()">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Submit Your Use Case</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <i class="fas fa-envelope-circle-check"></i>
+                    <p>Have an interesting GenAI use case to share? We'd love to hear from you!</p>
+                    <p>Please email your use case idea and details to:</p>
+                    <p class="email">shambhavi.das@h2o.ai</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy-Paste Notif -->
+    <div class="copy-notification" id="copyNotification">
+        Copied to clipboard!
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Selected Use Cases</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems"></div>
+                    <div class="cart-actions">
+                        <button class="btn btn-secondary" onclick="clearCart()">Clear All</button>
+                        <button class="btn btn-warning" onclick="copySelectedUseCases()">Copy All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Main script -->
+    <script>
+        // Data section (previously in data.js)
+        const use_cases = [
+            {
+                "title": "Real-time Patient Diagnostic Support",
+                "industry": "Healthcare",
+                "tagline": "AI-powered diagnostic assistance for medical professionals",
+                "objectives": [
+                    "Provide real-time diagnostic suggestions based on patient symptoms and medical history",
+                    "Reduce diagnostic errors and improve accuracy",
+                    "Speed up the diagnostic process"
+                ],
+                "outcomes": [
+                    "30% reduction in diagnostic time",
+                    "25% improvement in diagnostic accuracy",
+                    "Increased patient satisfaction due to faster diagnoses"
+                ],
+                "business_value": [
+                    "Reduced healthcare costs through early accurate diagnosis",
+                    "Improved patient outcomes",
+                    "Enhanced physician efficiency"
+                ],
+                "ai_approaches": [
+                    "Large Language Models for medical text analysis",
+                    "Machine Learning for pattern recognition",
+                    "Natural Language Processing for symptom analysis"
+                ],
+                "tags": ["Healthcare", "Diagnostics", "Patient Care", "Medical AI"]
+            },
+            {
+                "title": "Automated Insurance Claims Processing",
+                "industry": "Insurance",
+                "tagline": "Streamlining claims processing with AI",
+                "objectives": [
+                    "Automate routine claims processing",
+                    "Reduce processing time and costs",
+                    "Improve accuracy in claims assessment"
+                ],
+                "outcomes": [
+                    "70% reduction in processing time",
+                    "50% cost reduction in claims handling",
+                    "90% accuracy in automated assessments"
+                ],
+                "business_value": [
+                    "Significant cost savings in claims processing",
+                    "Improved customer satisfaction",
+                    "Reduced fraud through AI detection"
+                ],
+                "ai_approaches": [
+                    "Document AI for form processing",
+                    "Computer Vision for damage assessment",
+                    "Natural Language Processing for claim description analysis"
+                ],
+                "tags": ["Insurance", "Claims Processing", "Automation", "Fraud Detection"]
+            }
+        ];
+    
+        // Global Variables
+        let selectedUseCases = new Set();
+        let filteredUseCases = [];
+        let currentSort = 'default';
+    
+        // Function to create cards
+        function createCards(useCasesToShow = use_cases) {
+            const container = document.getElementById('FilterContainer');
+            container.innerHTML = '';
+            
+            filteredUseCases = useCasesToShow;
+            updateCounter();
+            
+            filteredUseCases.forEach((useCase, index) => {
+                const div = document.createElement('div');
+                div.className = `card mb-4 all ${useCase.industry.replace(/\s+/g, '')}`;
+                div.setAttribute('data-index', index);
+                
+                let tagsHtml = useCase.tags.map(tag => 
+                    `<span class="badge1">${tag}</span>`
+                ).join(' ');
+                
+                div.innerHTML = `
+                    <input type="checkbox" class="card-checkbox" onchange="toggleUseCase(${index}, this.checked)">
+                    <h3 class="card-title">${useCase.title}</h3>
+                    <p class="tagline">${useCase.tagline}</p>
+                    <p>${tagsHtml}</p>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                `;
+                
+                // Click event to show modal (exclude checkbox from triggering)
+                div.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('card-checkbox')) {
+                        showModal(useCase);
+                    }
+                });
+                
+                container.appendChild(div);
+            });
+        }
+    
+        // Function to update the counter
+        function updateCounter() {
+            document.getElementById('totalCounter').textContent = use_cases.length;
+            document.getElementById('visibleCounter').textContent = filteredUseCases.length;
+        }
+    
+        // Function to search use cases
+        function searchUseCases(searchTerm) {
+            const filtered = use_cases.filter(useCase => {
+                const searchIn = `${useCase.title} ${useCase.tagline}`.toLowerCase();
+                return searchIn.includes(searchTerm.toLowerCase());
+            });
+            sortUseCases(filtered);
+        }
+    
+        // Function to sort use cases
+        function sortUseCases(casesToSort = filteredUseCases) {
+            switch(currentSort) {
+                case 'titleAsc':
+                    casesToSort.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                case 'titleDesc':
+                    casesToSort.sort((a, b) => b.title.localeCompare(a.title));
+                    break;
+                case 'industryAsc':
+                    casesToSort.sort((a, b) => a.industry.localeCompare(b.industry));
+                    break;
+                case 'industryDesc':
+                    casesToSort.sort((a, b) => b.industry.localeCompare(a.industry));
+                    break;
+                default:
+                    // Keep original order
+                    casesToSort = casesToSort;
+            }
+            createCards(casesToSort);
+        }
+    
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            searchUseCases(e.target.value);
+        });
+    
+        document.getElementById('sortSelect').addEventListener('change', function(e) {
+            currentSort = e.target.value;
+            sortUseCases();
+        });
+    
+        // Filter event listener
+        document.querySelector('select.filterby').addEventListener('change', function() {
+            const industry = this.value;
+            const filtered = industry === 'all' 
+                ? use_cases 
+                : use_cases.filter(useCase => useCase.industry.replace(/\s+/g, '') === industry);
+            sortUseCases(filtered);
+        });
+    
+        // Function to show modal
+        function showModal(useCase) {
+            const modal = new bootstrap.Modal(document.getElementById('useCaseModal'));
+            const modalTitle = document.querySelector('.modal-title');
+            const modalBody = document.querySelector('.modal-body');
+    
+            modalTitle.textContent = useCase.title;
+    
+            modalBody.innerHTML = `
+                <p class="tagline">${useCase.tagline}</p>
+                
+                <div class="modal-section">
+                    <h5>Objectives</h5>
+                    <ul>
+                        ${useCase.objectives.map(obj => `<li>${obj}</li>`).join('')}
+                    </ul>
+                </div>
+    
+                <div class="modal-section">
+                    <h5>Outcomes</h5>
+                    <ul>
+                        ${useCase.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
+                    </ul>
+                </div>
+    
+                <div class="modal-section">
+                    <h5>Business Value</h5>
+                    <ul>
+                        ${useCase.business_value.map(value => `<li>${value}</li>`).join('')}
+                    </ul>
+                </div>
+    
+                <div class="modal-section">
+                    <h5>AI Approaches</h5>
+                    <ul>
+                        ${useCase.ai_approaches.map(approach => `<li>${approach}</li>`).join('')}
+                    </ul>
+                </div>
+    
+                <div class="modal-section modal-tags">
+                    <h5>Tags</h5>
+                    ${useCase.tags.map(tag => `<span class="badge1">${tag}</span>`).join(' ')}
+                </div>
+            `;
+    
+            modal.show();
+        }
+    
+        // Initial creation
+        createCards();
+    
+        // Copy-Paste Functionality
+        let currentUseCase = null; // Store the current use case data
+    
+        function formatUseCase(useCase) {
+            return `Use Case: ${useCase.title}
+    Industry: ${useCase.industry}
+    Tagline: ${useCase.tagline}
+    
+    Objectives:
+    ${useCase.objectives.map(obj => `• ${obj}`).join('\n')}
+    
+    Outcomes:
+    ${useCase.outcomes.map(outcome => `• ${outcome}`).join('\n')}
+    
+    Business Value:
+    ${useCase.business_value.map(value => `• ${value}`).join('\n')}
+    
+    AI Approaches:
+    ${useCase.ai_approaches.map(approach => `• ${approach}`).join('\n')}
+    
+    Tags: ${useCase.tags.join(', ')}`;
+        }
+    
+        function copyUseCase() {
+            if (!currentUseCase) return;
+            
+            const formattedText = formatUseCase(currentUseCase);
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(formattedText).then(() => {
+                // Show notification
+                const notification = document.getElementById('copyNotification');
+                notification.style.display = 'block';
+                
+                // Hide notification after 2 seconds
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy to clipboard');
+            });
+        }
+    
+        // Show Contact Modal
+        function showContactModal() {
+            const modal = new bootstrap.Modal(document.getElementById('contactModal'));
+            modal.show();
+        }
+    
+        // Multi-Select Functionality 
+        function toggleUseCase(index, checked) {
+            if (checked) {
+                selectedUseCases.add(index);
+            } else {
+                selectedUseCases.delete(index);
+            }
+            updateCartButton();
+        }
+    
+        function updateCartButton() {
+            const cartBtn = document.getElementById('cartBtn');
+            const cartCount = cartBtn.querySelector('.cart-count');
+            const count = selectedUseCases.size;
+            
+            cartCount.textContent = count;
+            cartBtn.style.display = count > 0 ? 'flex' : 'none';
+        }
+    
+        function showCartModal() {
+            const modal = new bootstrap.Modal(document.getElementById('cartModal'));
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+    
+            selectedUseCases.forEach(index => {
+                const useCase = use_cases[index];
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <h6>${useCase.title}</h6>
+                    <p class="tagline">${useCase.tagline}</p>
+                    <i class="fas fa-times cart-item-remove" onclick="removeFromCart(${index})"></i>
+                `;
+                cartItems.appendChild(div);
+            });
+    
+            modal.show();
+        }
+    
+        function removeFromCart(index) {
+            selectedUseCases.delete(index);
+            updateCartButton();
+            document.querySelector(`[data-index="${index}"] .card-checkbox`).checked = false;
+            showCartModal(); // Refresh the cart modal
+        }
+    
+        function clearCart() {
+            selectedUseCases.clear();
+            document.querySelectorAll('.card-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            updateCartButton();
+            const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
+            cartModal.hide();
+        }
+    
+        function copySelectedUseCases() {
+            const selectedText = Array.from(selectedUseCases)
+                .map(index => formatUseCase(use_cases[index]))
+                .join('\n\n' + '='.repeat(50) + '\n\n');
+            
+            navigator.clipboard.writeText(selectedText).then(() => {
+                // Show notification
+                const notification = document.getElementById('copyNotification');
+                notification.style.display = 'block';
+                
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy to clipboard');
+            });
+        }
+    
+        // Initialize
+        createCards();
+    </script>
+
+</body>
+</html>
