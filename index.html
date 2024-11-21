@@ -366,7 +366,6 @@
 
     </style>
 </head>
-
 <body>
     <div class="container">
         <!-- Add Use-Case Button -->
@@ -500,69 +499,17 @@
     <!-- Include Bootstrap JS and its dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Include the data file -->
+    <script src="data.js"></script>
+    
     <!-- Main script -->
     <script>
-        // Data section (previously in data.js)
-        const use_cases = [
-            {
-                "title": "Real-time Patient Diagnostic Support",
-                "industry": "Healthcare",
-                "tagline": "AI-powered diagnostic assistance for medical professionals",
-                "objectives": [
-                    "Provide real-time diagnostic suggestions based on patient symptoms and medical history",
-                    "Reduce diagnostic errors and improve accuracy",
-                    "Speed up the diagnostic process"
-                ],
-                "outcomes": [
-                    "30% reduction in diagnostic time",
-                    "25% improvement in diagnostic accuracy",
-                    "Increased patient satisfaction due to faster diagnoses"
-                ],
-                "business_value": [
-                    "Reduced healthcare costs through early accurate diagnosis",
-                    "Improved patient outcomes",
-                    "Enhanced physician efficiency"
-                ],
-                "ai_approaches": [
-                    "Large Language Models for medical text analysis",
-                    "Machine Learning for pattern recognition",
-                    "Natural Language Processing for symptom analysis"
-                ],
-                "tags": ["Healthcare", "Diagnostics", "Patient Care", "Medical AI"]
-            },
-            {
-                "title": "Automated Insurance Claims Processing",
-                "industry": "Insurance",
-                "tagline": "Streamlining claims processing with AI",
-                "objectives": [
-                    "Automate routine claims processing",
-                    "Reduce processing time and costs",
-                    "Improve accuracy in claims assessment"
-                ],
-                "outcomes": [
-                    "70% reduction in processing time",
-                    "50% cost reduction in claims handling",
-                    "90% accuracy in automated assessments"
-                ],
-                "business_value": [
-                    "Significant cost savings in claims processing",
-                    "Improved customer satisfaction",
-                    "Reduced fraud through AI detection"
-                ],
-                "ai_approaches": [
-                    "Document AI for form processing",
-                    "Computer Vision for damage assessment",
-                    "Natural Language Processing for claim description analysis"
-                ],
-                "tags": ["Insurance", "Claims Processing", "Automation", "Fraud Detection"]
-            }
-        ];
-    
+
         // Global Variables
         let selectedUseCases = new Set();
         let filteredUseCases = [];
         let currentSort = 'default';
-    
+
         // Function to create cards
         function createCards(useCasesToShow = use_cases) {
             const container = document.getElementById('FilterContainer');
@@ -600,13 +547,13 @@
                 container.appendChild(div);
             });
         }
-    
+
         // Function to update the counter
         function updateCounter() {
             document.getElementById('totalCounter').textContent = use_cases.length;
             document.getElementById('visibleCounter').textContent = filteredUseCases.length;
         }
-    
+
         // Function to search use cases
         function searchUseCases(searchTerm) {
             const filtered = use_cases.filter(useCase => {
@@ -615,7 +562,7 @@
             });
             sortUseCases(filtered);
         }
-    
+
         // Function to sort use cases
         function sortUseCases(casesToSort = filteredUseCases) {
             switch(currentSort) {
@@ -637,17 +584,17 @@
             }
             createCards(casesToSort);
         }
-    
+
         // Event listeners
         document.getElementById('searchInput').addEventListener('input', function(e) {
             searchUseCases(e.target.value);
         });
-    
+
         document.getElementById('sortSelect').addEventListener('change', function(e) {
             currentSort = e.target.value;
             sortUseCases();
         });
-    
+
         // Filter event listener
         document.querySelector('select.filterby').addEventListener('change', function() {
             const industry = this.value;
@@ -656,15 +603,15 @@
                 : use_cases.filter(useCase => useCase.industry.replace(/\s+/g, '') === industry);
             sortUseCases(filtered);
         });
-    
+
         // Function to show modal
         function showModal(useCase) {
             const modal = new bootstrap.Modal(document.getElementById('useCaseModal'));
             const modalTitle = document.querySelector('.modal-title');
             const modalBody = document.querySelector('.modal-body');
-    
+
             modalTitle.textContent = useCase.title;
-    
+
             modalBody.innerHTML = `
                 <p class="tagline">${useCase.tagline}</p>
                 
@@ -674,63 +621,126 @@
                         ${useCase.objectives.map(obj => `<li>${obj}</li>`).join('')}
                     </ul>
                 </div>
-    
+
                 <div class="modal-section">
                     <h5>Outcomes</h5>
                     <ul>
                         ${useCase.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
                     </ul>
                 </div>
-    
+
                 <div class="modal-section">
                     <h5>Business Value</h5>
                     <ul>
                         ${useCase.business_value.map(value => `<li>${value}</li>`).join('')}
                     </ul>
                 </div>
-    
+
                 <div class="modal-section">
                     <h5>AI Approaches</h5>
                     <ul>
                         ${useCase.ai_approaches.map(approach => `<li>${approach}</li>`).join('')}
                     </ul>
                 </div>
-    
+
                 <div class="modal-section modal-tags">
                     <h5>Tags</h5>
                     ${useCase.tags.map(tag => `<span class="badge1">${tag}</span>`).join(' ')}
                 </div>
             `;
-    
+
             modal.show();
         }
-    
+
         // Initial creation
         createCards();
-    
-        // Copy-Paste Functionality
+
+        // Filter functionality
+        document.querySelector('select.filterby').addEventListener('change', function() {
+            const industry = this.value;
+            const cards = document.querySelectorAll('.all');
+            
+            cards.forEach(card => {
+                if (industry === 'all' || card.classList.contains(industry)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+       // Copy-Paste Functionality
+
         let currentUseCase = null; // Store the current use case data
-    
+
+        function showModal(useCase) {
+            currentUseCase = useCase; // Store the current use case
+            const modal = new bootstrap.Modal(document.getElementById('useCaseModal'));
+            const modalTitle = document.querySelector('.modal-title');
+            const modalBody = document.querySelector('.modal-body');
+
+            modalTitle.textContent = useCase.title;
+
+            modalBody.innerHTML = `
+                <p class="tagline">${useCase.tagline}</p>
+                
+                <div class="modal-section">
+                    <h5>Objectives</h5>
+                    <ul>
+                        ${useCase.objectives.map(obj => `<li>${obj}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h5>Outcomes</h5>
+                    <ul>
+                        ${useCase.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h5>Business Value</h5>
+                    <ul>
+                        ${useCase.business_value.map(value => `<li>${value}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h5>AI Approaches</h5>
+                    <ul>
+                        ${useCase.ai_approaches.map(approach => `<li>${approach}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section modal-tags">
+                    <h5>Tags</h5>
+                    ${useCase.tags.map(tag => `<span class="badge1">${tag}</span>`).join(' ')}
+                </div>
+            `;
+
+            modal.show();
+        }
+
         function formatUseCase(useCase) {
             return `Use Case: ${useCase.title}
-    Industry: ${useCase.industry}
-    Tagline: ${useCase.tagline}
-    
-    Objectives:
-    ${useCase.objectives.map(obj => `• ${obj}`).join('\n')}
-    
-    Outcomes:
-    ${useCase.outcomes.map(outcome => `• ${outcome}`).join('\n')}
-    
-    Business Value:
-    ${useCase.business_value.map(value => `• ${value}`).join('\n')}
-    
-    AI Approaches:
-    ${useCase.ai_approaches.map(approach => `• ${approach}`).join('\n')}
-    
-    Tags: ${useCase.tags.join(', ')}`;
+Industry: ${useCase.industry}
+Tagline: ${useCase.tagline}
+
+Objectives:
+${useCase.objectives.map(obj => `• ${obj}`).join('\n')}
+
+Outcomes:
+${useCase.outcomes.map(outcome => `• ${outcome}`).join('\n')}
+
+Business Value:
+${useCase.business_value.map(value => `• ${value}`).join('\n')}
+
+AI Approaches:
+${useCase.ai_approaches.map(approach => `• ${approach}`).join('\n')}
+
+Tags: ${useCase.tags.join(', ')}`;
         }
-    
+
         function copyUseCase() {
             if (!currentUseCase) return;
             
@@ -751,14 +761,15 @@
                 alert('Failed to copy to clipboard');
             });
         }
-    
+
         // Show Contact Modal
         function showContactModal() {
             const modal = new bootstrap.Modal(document.getElementById('contactModal'));
             modal.show();
         }
-    
+
         // Multi-Select Functionality 
+        
         function toggleUseCase(index, checked) {
             if (checked) {
                 selectedUseCases.add(index);
@@ -767,7 +778,7 @@
             }
             updateCartButton();
         }
-    
+
         function updateCartButton() {
             const cartBtn = document.getElementById('cartBtn');
             const cartCount = cartBtn.querySelector('.cart-count');
@@ -776,12 +787,12 @@
             cartCount.textContent = count;
             cartBtn.style.display = count > 0 ? 'flex' : 'none';
         }
-    
+
         function showCartModal() {
             const modal = new bootstrap.Modal(document.getElementById('cartModal'));
             const cartItems = document.getElementById('cartItems');
             cartItems.innerHTML = '';
-    
+
             selectedUseCases.forEach(index => {
                 const useCase = use_cases[index];
                 const div = document.createElement('div');
@@ -793,17 +804,17 @@
                 `;
                 cartItems.appendChild(div);
             });
-    
+
             modal.show();
         }
-    
+
         function removeFromCart(index) {
             selectedUseCases.delete(index);
             updateCartButton();
             document.querySelector(`[data-index="${index}"] .card-checkbox`).checked = false;
             showCartModal(); // Refresh the cart modal
         }
-    
+
         function clearCart() {
             selectedUseCases.clear();
             document.querySelectorAll('.card-checkbox').forEach(checkbox => {
@@ -813,7 +824,7 @@
             const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
             cartModal.hide();
         }
-    
+
         function copySelectedUseCases() {
             const selectedText = Array.from(selectedUseCases)
                 .map(index => formatUseCase(use_cases[index]))
@@ -832,10 +843,10 @@
                 alert('Failed to copy to clipboard');
             });
         }
-    
+
         // Initialize
         createCards();
-    </script>
 
+    </script>
 </body>
 </html>
