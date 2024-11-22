@@ -198,7 +198,7 @@
     }
 
     .container {
-        position: relative; 
+        position: relative;  /* Add this */
     }
 
     #contactModal .modal-body {
@@ -299,10 +299,10 @@
     }
 
     .all {
-        padding-top: 40px;
+        padding-top: 40px; /* Increase top padding to accommodate checkbox */
     }
 
-            /* Advanced Filtering */
+            /* Aadvanced Filtering */
         .search-sort-container {
             width: 75%;
             margin-left: 14%;
@@ -392,7 +392,7 @@
             Showing <span class="counter-number" id="visibleCounter">0</span> of <span class="counter-number" id="totalCounter">0</span> use cases
         </div>
 
-        <!-- Search and Sort -->
+        <!-- Add Search and Sort -->
         <div class="search-sort-container">
             <div class="search-container">
                 <i class="fas fa-search"></i>
@@ -455,22 +455,63 @@
     </div>
 
     <!-- Contact Modal -->
-    <div class="modal fade" id="contactModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Submit Your Use Case</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <i class="fas fa-envelope-circle-check"></i>
-                    <p>Have an interesting GenAI use case to share? We'd love to hear from you!</p>
+<div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Submit Your Use Case</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-envelope-circle-check fa-3x text-warning mb-3"></i>
+                    <p class="lead">Have an interesting GenAI use case to share? We'd love to hear from you!</p>
                     <p>Please email your use case idea and details to:</p>
-                    <p class="email">shambhavi.das@h2o.ai</p>
+                    <p class="email fw-bold fs-5 mb-4">shambhavi.das@h2o.ai and jordan.seow@h2o.ai</p>
+                </div>
+                
+                <div class="template-container p-3 bg-light border rounded">
+                    <h6 class="mb-3">Please use this template format:</h6>
+                    <pre style="font-size: 12px; line-height: 1.4; background: white; padding: 15px; border-radius: 4px; max-height: 400px; overflow-y: auto;"><code>{
+    "title": "Template Name - Replace with your use case title",
+    "industry": "Select one: Healthcare|FinancialServices|Airlines|Legal|Manufacturing|PublicSector|Insurance|ArtandEntertainment|Marketing|RetailandCPG|Telecommunications|Environmental|LifeSciences|BeautyandWellness",
+    "tagline": "One-line description of your use case (max 100 characters)",
+    "objectives": [
+        "Objective 1 - What is the main goal?",
+        "Objective 2 - What are you trying to achieve?",
+        "Objective 3 - What problems are you solving?",
+        "Add more objectives as needed"
+    ],
+    "outcomes": [
+        "Outcome 1 - What were the measurable results? (e.g., 30% reduction in time)",
+        "Outcome 2 - What improvements were achieved?",
+        "Outcome 3 - What was the impact?",
+        "Add more outcomes as needed"
+    ],
+    "business_value": [
+        "Value 1 - What is the financial impact?",
+        "Value 2 - What are the operational benefits?",
+        "Value 3 - What are the strategic advantages?",
+        "Add more business values as needed"
+    ],
+    "ai_approaches": [
+        "Approach 1 - What AI technologies were used? (e.g., Large Language Models)",
+        "Approach 2 - What specific AI techniques were implemented?",
+        "Approach 3 - What AI frameworks or tools were utilized?",
+        "Add more AI approaches as needed"
+    ],
+    "tags": [
+        "Tag1",
+        "Tag2",
+        "Tag3",
+        "Add relevant keywords"
+    ]
+}</code></pre>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Copy-Paste Notif -->
     <div class="copy-notification" id="copyNotification">
@@ -496,10 +537,10 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS and its dependencies -->
+    <!-- Include Bootstrap JS and its dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Data file -->
+    <!-- Include the data file -->
     <script src="data.js"></script>
     
     <!-- Main script -->
