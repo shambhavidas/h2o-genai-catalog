@@ -530,7 +530,9 @@
                     <div id="cartItems"></div>
                     <div class="cart-actions">
                         <button class="btn btn-secondary" onclick="clearCart()">Clear All</button>
-                        <button class="btn btn-warning" onclick="copySelectedUseCases()">Copy All</button>
+                        <button class="btn btn-warning" onclick="downloadSelectedUseCases()">
+                            <i class="fas fa-download me-2"></i>Download CSV
+                        </button>
                     </div>
                 </div>
             </div>
@@ -883,6 +885,53 @@ Tags: ${useCase.tags.join(', ')}`;
                 console.error('Failed to copy text: ', err);
                 alert('Failed to copy to clipboard');
             });
+        }
+
+        // Download to CSV
+        function downloadSelectedUseCases() {
+            if (selectedUseCases.size === 0) return;
+            
+            // CSV Header
+            let csvContent = "Title,Industry,Tagline,Objectives,Outcomes,Business Value,AI Approaches,Tags\n";
+            
+            // Add each selected use case to CSV
+            selectedUseCases.forEach(index => {
+                const useCase = use_cases[index];
+                
+                // Format arrays into semicolon-separated strings
+                const objectives = useCase.objectives.join('; ');
+                const outcomes = useCase.outcomes.join('; ');
+                const business_value = useCase.business_value.join('; ');
+                const ai_approaches = useCase.ai_approaches.join('; ');
+                const tags = useCase.tags.join('; ');
+                
+                // Create CSV row with proper escaping
+                const row = [
+                    `"${useCase.title.replace(/"/g, '""')}"`,
+                    `"${useCase.industry.replace(/"/g, '""')}"`,
+                    `"${useCase.tagline.replace(/"/g, '""')}"`,
+                    `"${objectives.replace(/"/g, '""')}"`,
+                    `"${outcomes.replace(/"/g, '""')}"`,
+                    `"${business_value.replace(/"/g, '""')}"`,
+                    `"${ai_approaches.replace(/"/g, '""')}"`,
+                    `"${tags.replace(/"/g, '""')}"`
+                ].join(',');
+                
+                csvContent += row + '\n';
+            });
+            
+            // Create blob and download link
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'selected_use_cases.csv');
+            link.style.visibility = 'hidden';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         // Initialize
