@@ -18,9 +18,9 @@ use_cases = [
             "Increased success rate in drug development pipeline"
         ],
         "ai_approaches": [
-            "Transformer-based generative models trained on molecular structures with SMILES representation",
+            "Generative AI-based generative models trained on molecular structures with SMILES representation",
             "Graph neural networks (GNNs) with message passing for modeling molecular structures",
-            "Attention mechanisms with 3D-aware transformers for spatial molecular understanding",
+            "Attention mechanisms with 3D-aware Generative AI for spatial molecular understanding",
             "Reinforcement learning with molecular property scoring functions for optimization",
             "Multi-task learning combining QSAR prediction with generative capabilities",
             "Variational autoencoders (VAEs) for continuous molecular representation learning",
@@ -46,8 +46,8 @@ use_cases = [
             "More efficient use of healthcare resources"
         ],
         "ai_approaches": [
-            "Hierarchical transformers for multi-level demographic analysis",
-            "Natural language generation with controlled vocabulary for health literacy",
+            "Hierarchical Generative AI for multi-level demographic analysis",
+            "Natural language generation through Generative AI with controlled vocabulary for health literacy",
             "Multi-modal learning combining text, demographic, and health data",
             "Few-shot learning for adapting to new demographic groups",
             "Attention mechanisms for identifying relevant SDoH factors",
@@ -74,7 +74,7 @@ use_cases = [
             "Improved regulatory compliance and reduced audit risks"
         ],
         "ai_approaches": [
-            "Transformer-based document analysis for regulatory requirement extraction",
+            "Generative AI-based document analysis for regulatory requirement extraction",
             "Sequence-to-sequence models for workflow optimization",
             "Named entity recognition for identifying GxP-relevant terms",
             "Graph neural networks for modeling workflow dependencies",
@@ -104,7 +104,7 @@ use_cases = [
         "ai_approaches": [
             "Deep neural networks for patient-provider matching optimization",
             "Multi-task learning combining demographic and clinical predictions",
-            "Natural language processing for medical record analysis",
+            "Natural language processing through Generative AI for medical record analysis",
             "Collaborative filtering for provider-patient compatibility",
             "Attention mechanisms for identifying key medical factors",
             "Graph neural networks for modeling healthcare provider networks",
@@ -131,7 +131,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Retrieval-augmented generation (RAG) with financial knowledge bases",
-            "Hierarchical transformers for maintaining conversation context",
+            "Hierarchical Generative AI for maintaining conversation context",
             "Named entity recognition for financial terms and numbers",
             "Semantic parsing for complex financial queries",
             "Multi-task learning combining NLP with financial prediction",
@@ -158,7 +158,7 @@ use_cases = [
             "Improved efficiency in contract management processes"
         ],
         "ai_approaches": [
-            "Transformer-based models fine-tuned on financial contracts",
+            "Generative AI-based models fine-tuned on financial contracts",
             "Named entity recognition for financial terms and clauses",
             "Graph neural networks for contract clause relationships",
             "Zero-shot classification for contract type identification",
@@ -186,9 +186,9 @@ use_cases = [
             "Increased ancillary revenue from suggested activities"
         ],
         "ai_approaches": [
-            "Transformer models for personalized recommendations",
+            "Generative AI models for personalized recommendations",
             "Multi-objective optimization for itinerary planning",
-            "Natural language generation for itinerary descriptions",
+            "Natural language generation through Generative AI for itinerary descriptions",
             "Graph neural networks for route optimization",
             "Reinforcement learning for preference learning",
             "Time series analysis for seasonal patterns",
@@ -214,9 +214,9 @@ use_cases = [
             "Potential reduction in safety-related incidents"
         ],
         "ai_approaches": [
-            "Multi-modal transformers for content generation",
+            "Multi-modal Generative AI for content generation",
             "Computer vision for safety demonstration visuals",
-            "Natural language generation with readability control",
+            "Natural language generation through Generative AI with readability control",
             "Few-shot learning for new aircraft types",
             "Transfer learning from safety documentation",
             "Attention mechanisms for critical safety points",
@@ -244,7 +244,7 @@ use_cases = [
         "ai_approaches": [
             "3D scene generation with deep learning",
             "Reinforcement learning for scenario adaptation",
-            "Natural language processing for scenario description",
+            "Natural language processing through Generative AI for scenario description",
             "Computer vision for visual scene understanding",
             "Graph neural networks for scenario relationships",
             "Few-shot learning for new emergency scenarios",
@@ -270,7 +270,7 @@ use_cases = [
             "Reduced risk of errors in legal documentation"
         ],
         "ai_approaches": [
-            "Transformer-based models with legal document fine-tuning",
+            "Generative AI-based models with legal document fine-tuning",
             "Named entity recognition for legal entities and clauses",
             "Template-guided generation with jurisdiction awareness",
             "Zero-shot classification for document types",
@@ -299,7 +299,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Dense passage retrieval for legal precedent search",
-            "Natural language processing for case law analysis",
+            "Natural language processing through Generative AI for case law analysis",
             "Graph neural networks for legal citation networks",
             "Zero-shot learning for new legal concepts",
             "Few-shot learning for emerging legal areas",
@@ -326,7 +326,7 @@ use_cases = [
             "Reduced maintenance costs and equipment failures"
         ],
         "ai_approaches": [
-            "Transformer models fine-tuned on technical documentation",
+            "Generative AI models fine-tuned on technical documentation",
             "Multi-modal learning for text-diagram integration",
             "Named entity recognition for technical components and procedures",
             "Knowledge graph neural networks for equipment relationships",
@@ -382,14 +382,14 @@ use_cases = [
             "Cost savings through automation of routine tasks"
         ],
         "ai_approaches": [
-            "Transformer models fine-tuned on government service documentation",
+            "Generative AI models fine-tuned on government service documentation",
             "Multi-lingual model adaptation for diverse populations",
             "Named entity recognition for government terms and procedures",
             "Intent classification with hierarchical categories",
             "Few-shot learning for new government services",
             "Transfer learning from public service knowledge bases",
             "Attention mechanisms for service requirement identification",
-            "Natural language generation with regulatory compliance"
+            "Natural language generation through Generative AI with regulatory compliance"
         ]
     },
     {
@@ -412,7 +412,7 @@ use_cases = [
         "ai_approaches": [
             "Causal inference models for policy impact prediction",
             "Graph neural networks for stakeholder impact modeling",
-            "Natural language generation for report creation",
+            "Natural language generation through Generative AI for report creation",
             "Time series forecasting for long-term impact analysis",
             "Multi-objective optimization for policy trade-offs",
             "Transfer learning from historical policy data",
@@ -438,7 +438,7 @@ use_cases = [
             "Reduced legal risks due to standardized, compliant documentation"
         ],
         "ai_approaches": [
-            "Transformer-based models fine-tuned on insurance policy documents",
+            "Generative AI-based models fine-tuned on insurance policy documents",
             "Named entity recognition for insurance terms and conditions",
             "Template-guided generation with regulatory constraints",
             "Zero-shot classification for policy type identification",
@@ -468,7 +468,7 @@ use_cases = [
         "ai_approaches": [
             "Natural language understanding with domain-specific embeddings",
             "Computer vision for claims document and image analysis",
-            "Multi-modal transformers for processing text and image evidence",
+            "Multi-modal Generative AI for processing text and image evidence",
             "Fraud detection with graph neural networks",
             "Named entity recognition for claims-specific information",
             "Sequence-to-sequence models for claims summarization",
@@ -498,7 +498,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Diffusion models for high-quality image generation",
-            "Transformer architectures for text-to-image synthesis",
+            "Generative AI architectures for text-to-image synthesis",
             "Style transfer networks with adaptive instance normalization",
             "Generative adversarial networks for artistic styles",
             "Attention mechanisms for fine detail preservation",
@@ -535,7 +535,7 @@ use_cases = [
             "Style transfer for visual consistency",
             "Few-shot learning for music genres",
             "Transfer learning from music video datasets",
-            "Multi-modal transformers for audio-visual coherence"
+            "Multi-modal Generative AI for audio-visual coherence"
         ]
     },
     {
@@ -556,9 +556,14 @@ use_cases = [
             "Reduced time and cost for content creation"
         ],
         "ai_approaches": [
-            "GenAI Tools",
-            "Natural Language Generation (NLG) for content creation",
-            "Integration with customer segmentation and behavior analysis models"
+            "Generative AI models fine-tuned for brand voice consistency",
+            "Multi-modal learning for cross-channel content generation",
+            "Attention mechanisms for audience preference adaptation",
+            "Real-time personalization with online learning",
+            "Transfer learning from successful marketing campaigns",
+            "Few-shot learning for new content formats",
+            "A/B testing integration with reinforcement learning",
+            "Natural language generation through Generative AI with tone control"
         ]
     },
     {
@@ -579,8 +584,14 @@ use_cases = [
             "Enhanced creativity in marketing initiatives"
         ],
         "ai_approaches": [
-            "GenAI Tools for creative idea generation",
-            "Integration with market trend analysis and customer insight models"
+            "Generative AI models for creative idea generation",
+            "Knowledge graph neural networks for market trends",
+            "Multi-task learning for brand alignment and creativity",
+            "Transfer learning from successful campaigns",
+            "Few-shot learning for new marketing channels",
+            "Attention mechanisms for trend relevance",
+            "Natural language generation through Generative AI with brand constraints",
+            "Causal inference for campaign effectiveness"
         ]
     },
     {
@@ -601,9 +612,14 @@ use_cases = [
             "Faster optimization of marketing campaigns"
         ],
         "ai_approaches": [
-            "GenAI Tools for scenarios development",
-            "Machine learning models for variation generation",
-            "Real-time analytics for test result interpretation"
+            "Multi-armed bandit algorithms with neural networks",
+            "Bayesian optimization for test design",
+            "Causal inference models for impact analysis",
+            "Transfer learning from previous tests",
+            "Few-shot learning for new test types",
+            "Natural language generation through Generative AI for variant creation",
+            "Real-time adaptation with online learning",
+            "Multi-task learning for multiple metrics"
         ]
     },
     {
@@ -627,7 +643,15 @@ use_cases = [
         "ai_approaches": [
             "GenAI Tools to process influencer and brand content",
             "H2O AutoML for influencer analysis and matching",
-            "H2O LLM Studio to generate customized collaboration proposals"
+            "H2O LLM Studio to generate customized collaboration proposals",
+            "Graph neural networks for influence network analysis",
+            "Natural language processing through Generative AI for content alignment",
+            "Computer vision for visual style matching",
+            "Multi-modal learning for brand-influencer fit",
+            "Transfer learning from successful partnerships",
+            "Few-shot learning for new influence categories",
+            "Attention mechanisms for audience overlap",
+            "Sentiment analysis for brand safety"
         ]
     },
     {
@@ -648,8 +672,14 @@ use_cases = [
             "Reduced time and cost for content creation"
         ],
         "ai_approaches": [
-            "Natural Language Processing (NLP) models",
-            "Customer segmentation data integration"
+            "Generative AI models fine-tuned on product catalogs",
+            "Multi-modal learning for text-image alignment",
+            "Attribute extraction with named entity recognition",
+            "Transfer learning from e-commerce datasets",
+            "Few-shot learning for new product categories",
+            "Natural language generation through Generative AI with SEO optimization",
+            "Attention mechanisms for key feature highlighting",
+            "Multi-language adaptation with parallel text"
         ]
     },
     {
@@ -670,8 +700,14 @@ use_cases = [
             "Strengthened brand-consumer relationship"
         ],
         "ai_approaches": [
-            "Knowledge graph of product attributes and culinary data",
-            "Generative models trained on recipe databases"
+            "Knowledge graph neural networks for ingredient relationships",
+            "Natural language generation through Generative AI for recipe steps",
+            "Multi-modal learning for recipe visualization",
+            "Transfer learning from cooking databases",
+            "Few-shot learning for dietary restrictions",
+            "Attention mechanisms for ingredient substitution",
+            "Computer vision for final presentation",
+            "Personalization with collaborative filtering"
         ]
     },
     {
@@ -692,8 +728,14 @@ use_cases = [
             "Improved customer loyalty through personalized service"
         ],
         "ai_approaches": [
-            "GenAI facilities for natural language interactions",
-            "H2O AutoML for customer preference analysis and product matching"
+            "Generative AI models for shopping dialogue",
+            "Multi-modal learning for product understanding",
+            "Collaborative filtering with deep learning",
+            "Transfer learning from shopping behavior",
+            "Few-shot learning for new product lines",
+            "Natural language understanding for preferences",
+            "Computer vision for style matching",
+            "Reinforcement learning for recommendation refinement"
         ]
     },
     {
@@ -714,8 +756,14 @@ use_cases = [
             "Higher conversion rates for upselling and cross-selling initiatives"
         ],
         "ai_approaches": [
-            "H2O.ai's large language models for generating personalized content",
-            "H2O AutoML for predictive analytics on customer behavior"
+            "Generative AI models for customer interaction history",
+            "Deep reinforcement learning for engagement optimization",
+            "Multi-task learning for cross-channel personalization",
+            "Graph neural networks for customer relationship modeling",
+            "Transfer learning from service interaction patterns",
+            "Few-shot learning for new service offerings",
+            "Real-time adaptation with online learning",
+            "Natural language generation through Generative AI with tone personalization"
         ]
     },
     {
@@ -738,7 +786,15 @@ use_cases = [
         "ai_approaches": [
             "H2O.ai's GenAI capabilities for call/audio processing",
             "H2O Document AI for advanced text analysis of call transcripts",
-            "H2O MLOps for deploying and monitoring speech-to-text models"
+            "H2O MLOps for deploying and monitoring speech-to-text models",
+            "Speech recognition with acoustic adaptation",
+            "Natural language understanding for intent classification",
+            "Sentiment analysis with temporal modeling",
+            "Multi-modal learning for voice and text features",
+            "Transfer learning from conversation patterns",
+            "Few-shot learning for new call types",
+            "Real-time emotion detection with neural networks",
+            "Attention mechanisms for key moment detection"
         ]
     },
     {
@@ -815,7 +871,7 @@ use_cases = [
             "Faster progression of successful drug candidates"
         ],
         "ai_approaches": [
-            "Transformer models for trial protocol analysis",
+            "Generative AI models for trial protocol analysis",
             "Survival analysis with deep learning",
             "Multi-modal learning for patient data integration",
             "Graph neural networks for patient similarity modeling",
@@ -874,10 +930,14 @@ use_cases = [
             "Reduced product development costs"
         ],
         "ai_approaches": [
-            "Machine Learning for skin type classification",
-            "Predictive modeling for ingredient efficacy",
-            "Recommendation systems for product combinations",
-            "Computer vision for skin analysis"
+            "Computer vision for skin condition analysis",
+            "Graph neural networks for ingredient interactions",
+            "Multi-task learning for multiple skin concerns",
+            "Transfer learning from dermatological data",
+            "Few-shot learning for rare skin conditions",
+            "Generative models for formula optimization",
+            "Causal inference for ingredient effectiveness",
+            "Time series analysis for treatment progression"
         ]
     },
     {
@@ -901,10 +961,14 @@ use_cases = [
             "Increased long-term user retention"
         ],
         "ai_approaches": [
-            "Machine Learning for workout optimization",
+            "Deep reinforcement learning for workout optimization",
             "Time series analysis for progress tracking",
-            "Recommendation systems for exercise selection",
-            "Natural Language Processing for workout instruction generation"
+            "Computer vision for form correction",
+            "Transfer learning from exercise patterns",
+            "Few-shot learning for new workout types",
+            "Multi-task learning for different fitness goals",
+            "Natural language generation through Generative AI for instruction",
+            "Graph neural networks for exercise relationships"
         ]
     },
     {
@@ -926,7 +990,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Deep collaborative filtering for preferences",
-            "Natural language processing for content analysis",
+            "Natural language processing through Generative AI for content analysis",
             "Multi-modal learning for diverse content types",
             "Time-aware recommendation systems",
             "Transfer learning from entertainment domain",
@@ -953,9 +1017,9 @@ use_cases = [
             "Increased customer trust through transparent communication"
         ],
         "ai_approaches": [
-            "Transformer models for crisis response generation",
+            "Generative AI models for crisis response generation",
             "Sentiment analysis for public response monitoring",
-            "Natural language generation with tone control",
+            "Natural language generation through Generative AI with tone control",
             "Few-shot learning for new crisis types",
             "Multi-channel message optimization",
             "Transfer learning from crisis communication corpus",
@@ -981,9 +1045,14 @@ use_cases = [
             "Increased long-term profitability through targeted customer investments"
         ],
         "ai_approaches": [
-            "H2O.ai's large language models capabilities",
-            "ML techniques to maintain up-to-date customer features",
-            "Time Series analysis for trends and forecasting"
+            "Deep survival analysis for customer lifecycle",
+            "Time series forecasting with uncertainty quantification",
+            "Graph neural networks for usage pattern modeling",
+            "Multi-task learning for value indicators",
+            "Transfer learning from customer segments",
+            "Few-shot learning for new service adoption",
+            "Attention mechanisms for critical events",
+            "Causal inference for retention factors"
         ]
     },
     {
@@ -1004,9 +1073,14 @@ use_cases = [
             "Increased customer lifetime value through successful retention"
         ],
         "ai_approaches": [
-            "H2O.ai's large language models for generating personalized content",
-            "H2O AutoML for developing accurate churn prediction models",
-            "Create interactive dashboards for churn analysis"
+            "Ensemble deep learning for churn prediction",
+            "Natural language processing through Generative AI for complaint analysis",
+            "Graph neural networks for social influence",
+            "Time series analysis for usage patterns",
+            "Transfer learning from churn patterns",
+            "Few-shot learning for new churn indicators",
+            "Multi-task learning for retention strategies",
+            "Reinforcement learning for intervention timing"
         ]
     },
     {
@@ -1027,12 +1101,12 @@ use_cases = [
             "Enhanced reputation for ethical practice"
         ],
         "ai_approaches": [
-            "Transformer models for ethics document analysis",
+            "Generative AI models for ethics document analysis",
             "Named entity recognition for ethical concepts",
             "Graph neural networks for ethical relationship modeling",
             "Zero-shot classification for new ethical issues",
             "Few-shot learning for emerging ethical concerns",
-            "Natural language generation for ethical guidance",
+            "Natural language generation through Generative AI for ethical guidance",
             "Attention mechanisms for conflict detection",
             "Transfer learning from ethics literature"
         ]
@@ -1055,8 +1129,14 @@ use_cases = [
             "Increased revenue per customer"
         ],
         "ai_approaches": [
-            "GenAI Tools to process product content",
-            "H2O AutoML for purchase pattern analysis and prediction"
+            "Deep collaborative filtering for bundle creation",
+            "Graph neural networks for product relationships",
+            "Market basket analysis with neural networks",
+            "Transfer learning from purchase patterns",
+            "Few-shot learning for seasonal bundles",
+            "Multi-objective optimization for bundle value",
+            "Attention mechanisms for complementary products",
+            "Time series analysis for temporal patterns"
         ]
     },
     {
@@ -1105,9 +1185,14 @@ use_cases = [
             "Stronger brand-influencer relationships"
         ],
         "ai_approaches": [
-            "GenAI Tools",
-            "Natural Language Processing for style analysis",
-            "Content generation models trained on successful influencer campaigns"
+            "Style transfer networks for brand-influencer fusion",
+            "Natural language generation through Generative AI with voice preservation",
+            "Multi-modal learning for cross-platform content",
+            "Transfer learning from viral content",
+            "Few-shot learning for new content trends",
+            "Attention mechanisms for brand element placement",
+            "Computer vision for visual consistency",
+            "Engagement prediction with deep learning"
         ]
     },
     {
@@ -1128,8 +1213,14 @@ use_cases = [
             "Enhanced customer experience through immediate, relevant interactions"
         ],
         "ai_approaches": [
-            "H2O LLM Studio for natural language processing and generation",
-            "H2O MLOps for deploying and monitoring conversational AI models"
+            "Hierarchical Generative AI for conversation flow",
+            "Real-time personalization with online learning",
+            "Natural language understanding with intent classification",
+            "Transfer learning from customer service interactions",
+            "Few-shot learning for new conversation scenarios",
+            "Multi-task learning for multiple objectives",
+            "Sentiment analysis for response adaptation",
+            "Reinforcement learning for conversation optimization"
         ]
     },
     {
@@ -1151,7 +1242,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "GenAI tools for document creation",
-            "Natural Language Processing for report analysis",
+            "Natural language processing through Generative AI for report analysis",
             "Text summarization techniques for generating concise reports"
         ]
     },
@@ -1176,7 +1267,7 @@ use_cases = [
             "New tools for music education and composition"
         ],
         "ai_approaches": [
-            "Transformer models for melody generation",
+            "Generative AI models for melody generation",
             "Recursive neural networks for musical structure",
             "Attention mechanisms for harmonic relationships",
             "Style transfer for musical genres",
@@ -1207,10 +1298,14 @@ use_cases = [
             "Improved alignment with consumer preferences"
         ],
         "ai_approaches": [
-            "Computer vision for trend analysis",
-            "Generative models for design creation",
-            "Time series forecasting for trend prediction",
-            "Recommendation systems for personalized fashion"
+            "Generative adversarial networks for design creation",
+            "Computer vision for style analysis",
+            "Graph neural networks for fashion trends",
+            "Transfer learning from fashion collections",
+            "Few-shot learning for new style elements",
+            "Multi-modal learning for design inspiration",
+            "Attention mechanisms for detail generation",
+            "Time series analysis for trend prediction"
         ]
     },
     {
@@ -1231,11 +1326,11 @@ use_cases = [
             "Improved regulatory compliance"
         ],
         "ai_approaches": [
-            "Transformer models for safety document analysis",
+            "Generative AI models for safety document analysis",
             "Named entity recognition for safety procedures",
             "Knowledge graph integration for safety relationships",
             "Few-shot learning for new safety scenarios",
-            "Natural language generation with safety-critical constraints",
+            "Natural language generation through Generative AI with safety-critical constraints",
             "Multi-task learning for different safety aspects",
             "Transfer learning from safety regulations",
             "Attention mechanisms for critical safety points"
@@ -1288,7 +1383,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Computer vision for defect detection",
-            "Natural language generation for report creation",
+            "Natural language generation through Generative AI for report creation",
             "Time series analysis for quality trends",
             "Anomaly detection with deep learning",
             "Multi-modal learning for diverse quality data",
@@ -1315,8 +1410,8 @@ use_cases = [
             "Better risk management through more granular customer data"
         ],
         "ai_approaches": [
-            "Hierarchical transformers for risk profiling conversations",
-            "Natural language generation with risk-appropriate tone",
+            "Hierarchical Generative AI for risk profiling conversations",
+            "Natural language generation through Generative AI with risk-appropriate tone",
             "Multi-task learning combining chat and risk assessment",
             "Decision tree ensembles for risk classification",
             "Few-shot learning for new risk scenarios",
@@ -1344,7 +1439,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Time series forecasting for maintenance scheduling",
-            "Natural language generation for maintenance guides",
+            "Natural language generation through Generative AI for maintenance guides",
             "Computer vision for equipment condition assessment",
             "Graph neural networks for asset dependency modeling",
             "Transfer learning from general maintenance docs",
@@ -1372,7 +1467,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Deep neural networks for risk factor analysis",
-            "Natural language generation for report creation",
+            "Natural language generation through Generative AI for report creation",
             "Multi-modal learning for diverse data sources",
             "Attention mechanisms for key risk indicators",
             "Graph neural networks for relationship modeling",
@@ -1399,8 +1494,8 @@ use_cases = [
             "Potential for upselling and cross-selling through improved product understanding"
         ],
         "ai_approaches": [
-            "Transformer models with educational content fine-tuning",
-            "Natural language generation with readability control",
+            "Generative AI models with educational content fine-tuning",
+            "Natural language generation through Generative AI with readability control",
             "Few-shot learning for new insurance concepts",
             "Multi-modal learning for interactive content",
             "Attention mechanisms for concept explanation",
@@ -1427,12 +1522,12 @@ use_cases = [
             "Improved reputation with regulators and customers"
         ],
         "ai_approaches": [
-            "Transformer models for regulatory document analysis",
+            "Generative AI models for regulatory document analysis",
             "Named entity recognition for compliance terms",
             "Graph neural networks for regulatory relationships",
             "Zero-shot classification for new regulations",
             "Few-shot learning for regulatory updates",
-            "Natural language generation for compliance guides",
+            "Natural language generation through Generative AI for compliance guides",
             "Attention mechanisms for critical requirements",
             "Transfer learning from legal to insurance domain"
         ]
@@ -1455,9 +1550,14 @@ use_cases = [
             "Improved service levels and customer satisfaction"
         ],
         "ai_approaches": [
-            "H2O.ai's large language models",
-            "H2O AutoML for developing adaptive forecasting models",
-            "H2O MLOps for continuous monitoring and updating of supply chain models"
+            "Graph neural networks for supply network modeling",
+            "Deep reinforcement learning for inventory management",
+            "Time series forecasting for demand prediction",
+            "Multi-agent systems for logistics optimization",
+            "Transfer learning from supply patterns",
+            "Few-shot learning for new components",
+            "Attention mechanisms for bottleneck detection",
+            "Causal inference for delay analysis"
         ]
     },
     {
@@ -1478,9 +1578,14 @@ use_cases = [
             "Reduced operational costs through efficient resource management"
         ],
         "ai_approaches": [
-            "H2O.ai's large language models for generating scenarios",
-            "Time Series analysis for network traffic forecasting",
-            "ML models for continuous monitoring of network performance models"
+            "Deep reinforcement learning for resource allocation",
+            "Graph neural networks for network topology",
+            "Time series analysis for traffic patterns",
+            "Anomaly detection with deep learning",
+            "Transfer learning from network states",
+            "Few-shot learning for new traffic types",
+            "Physics-informed neural networks for signal propagation",
+            "Multi-objective optimization for QoS metrics"
         ]
     },
     {
@@ -1501,9 +1606,14 @@ use_cases = [
             "Enhanced brand reputation through environmentally conscious initiatives"
         ],
         "ai_approaches": [
-            "H2O.ai's large language models",
-            "H2O AutoML for developing climate impact prediction models",
-            "Maintain features to keep the environmental data up to date"
+            "Physics-informed neural networks for environmental modeling",
+            "Graph neural networks for infrastructure resilience",
+            "Time series forecasting for climate impacts",
+            "Multi-objective optimization for adaptation strategies",
+            "Transfer learning from climate patterns",
+            "Few-shot learning for extreme events",
+            "Causal inference for failure analysis",
+            "Reinforcement learning for adaptive routing"
         ]
     },
     {
@@ -1552,9 +1662,9 @@ use_cases = [
             "More efficient use of public health communication resources"
         ],
         "ai_approaches": [
-            "Transformer models with health literacy adaptation",
+            "Generative AI models with health literacy adaptation",
             "Multi-lingual generation for diverse communities",
-            "Natural language generation with cultural sensitivity",
+            "Natural language generation through Generative AI with cultural sensitivity",
             "Demographic-aware content customization",
             "Transfer learning from health communication corpus",
             "Few-shot learning for new health topics",
@@ -1582,7 +1692,7 @@ use_cases = [
         "ai_approaches": [
             "Graph neural networks for emergency resource allocation",
             "Reinforcement learning for response optimization",
-            "Natural language generation for action plans",
+            "Natural language generation through Generative AI for action plans",
             "Time series forecasting for resource needs",
             "Multi-agent systems for coordination modeling",
             "Transfer learning from historical emergencies",
@@ -1637,7 +1747,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Deep clustering for patient stratification",
-            "Natural language processing for medical records",
+            "Natural language processing through Generative AI for medical records",
             "Graph neural networks for patient relationships",
             "Multi-modal learning for diverse clinical data",
             "Transfer learning from existing cohort studies",
@@ -1665,7 +1775,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Survival analysis with deep learning",
-            "Natural language generation for engagement content",
+            "Natural language generation through Generative AI for engagement content",
             "Time series forecasting for dropout prediction",
             "Graph neural networks for participant similarity",
             "Transfer learning from completed trials",
@@ -1692,8 +1802,14 @@ use_cases = [
             "Reduced costs associated with physical store remodeling"
         ],
         "ai_approaches": [
-            "GenAI facilities for generating merch scenarios",
-            "H2O AutoML for analyzing customer traffic patterns and purchase behavior"
+            "Computer vision for layout optimization",
+            "Heat map generation with deep learning",
+            "Graph neural networks for product placement",
+            "Transfer learning from store performance data",
+            "Few-shot learning for new store formats",
+            "Reinforcement learning for layout adaptation",
+            "Multi-objective optimization for space utilization",
+            "Time series analysis for traffic patterns"
         ]
     },
     {
@@ -1714,8 +1830,14 @@ use_cases = [
             "Lowered operational costs associated with returns and exchanges"
         ],
         "ai_approaches": [
-            "Image processing and augmented reality",
-            "Video Intelligence for real time virtual try-ons"
+            "Generative adversarial networks for virtual fitting",
+            "Computer vision for body measurement",
+            "3D reconstruction with neural networks",
+            "Transfer learning from fashion datasets",
+            "Few-shot learning for new clothing styles",
+            "Multi-view synthesis for different angles",
+            "Physics-based neural rendering",
+            "Real-time adaptation for user movement"
         ]
     },
     {
@@ -1736,12 +1858,12 @@ use_cases = [
             "New business opportunities in regulatory advisory services"
         ],
         "ai_approaches": [
-            "Transformer models for regulatory change detection",
+            "Generative AI models for regulatory change detection",
             "Named entity recognition for compliance terms",
             "Graph neural networks for regulatory impact analysis",
             "Zero-shot classification for new regulations",
             "Few-shot learning for regulatory updates",
-            "Natural language generation for impact reports",
+            "Natural language generation through Generative AI for impact reports",
             "Attention mechanisms for key requirement changes",
             "Time series analysis for compliance trends"
         ]
@@ -1764,10 +1886,10 @@ use_cases = [
             "Improved risk management in transactions"
         ],
         "ai_approaches": [
-            "Multi-modal transformers for document analysis",
+            "Multi-modal Generative AI for document analysis",
             "Named entity recognition for key business entities",
             "Graph neural networks for corporate relationships",
-            "Natural language processing for risk identification",
+            "Natural language processing through Generative AI for risk identification",
             "Few-shot learning for new transaction types",
             "Time series analysis for financial trends",
             "Attention mechanisms for red flag detection",
@@ -1793,7 +1915,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Time series forecasting for project scheduling",
-            "Natural language processing for task analysis",
+            "Natural language processing through Generative AI for task analysis",
             "Graph neural networks for task dependencies",
             "Reinforcement learning for resource allocation",
             "Few-shot learning for new project types",
@@ -1824,7 +1946,7 @@ use_cases = [
         ],
         "ai_approaches": [
             "Deep learning for financial metric extraction",
-            "Natural language processing for narrative analysis",
+            "Natural language processing through Generative AI for narrative analysis",
             "Time series analysis for trend identification",
             "Graph neural networks for financial relationship modeling",
             "Multi-task learning for simultaneous metric analysis",
@@ -1857,7 +1979,7 @@ use_cases = [
             "Improved risk management and compliance"
         ],
         "ai_approaches": [
-            "Transformer models for ESG document analysis",
+            "Generative AI models for ESG document analysis",
             "Named entity recognition for ESG metrics",
             "Topic modeling with dynamic topic evolution",
             "Sentiment analysis for ESG impact assessment",
@@ -1893,7 +2015,7 @@ use_cases = [
         "ai_approaches": [
             "Reinforcement learning for portfolio optimization",
             "Time series forecasting for market prediction",
-            "Natural language generation for personalized reports",
+            "Natural language generation through Generative AI for personalized reports",
             "Multi-objective optimization for risk-return balancing",
             "Attention mechanisms for market factor analysis",
             "Transfer learning for market regime adaptation",
@@ -1921,7 +2043,7 @@ use_cases = [
         "ai_approaches": [
             "Generative adversarial networks for scenario creation",
             "Monte Carlo simulation with deep learning",
-            "Transformer models for scenario description generation",
+            "Generative AI models for scenario description generation",
             "Time series forecasting for scenario evolution",
             "Graph neural networks for risk factor relationships",
             "Attention mechanisms for risk factor importance",
@@ -1954,7 +2076,7 @@ use_cases = [
             "Transfer learning from successful urban projects",
             "Few-shot learning for new sustainability requirements",
             "Computer vision for environmental impact analysis",
-            "Natural language generation for planning reports"
+            "Natural language generation through Generative AI for planning reports"
         ]
     },
     {
@@ -1980,7 +2102,7 @@ use_cases = [
             "Multi-modal learning for diverse data sources",
             "Transfer learning from similar regions",
             "Few-shot learning for new poverty indicators",
-            "Natural language generation for intervention plans",
+            "Natural language generation through Generative AI for intervention plans",
             "Causal inference models for intervention impact",
             "Spatio-temporal modeling for poverty dynamics"
         ]
@@ -2006,7 +2128,7 @@ use_cases = [
             "Graph neural networks for resource allocation",
             "Time series forecasting for disaster evolution",
             "Multi-agent systems for coordination modeling",
-            "Natural language generation for response plans",
+            "Natural language generation through Generative AI for response plans",
             "Computer vision for damage assessment",
             "Transfer learning from historical disasters",
             "Few-shot learning for new disaster types",
@@ -2031,7 +2153,7 @@ use_cases = [
             "Increased stakeholder trust through transparent communication"
         ],
         "ai_approaches": [
-            "Natural language generation with sentiment control",
+            "Natural language generation through Generative AI with sentiment control",
             "Real-time sentiment analysis for market response",
             "Few-shot learning for new crisis types",
             "Multi-channel message optimization",
@@ -2087,8 +2209,8 @@ use_cases = [
             "More informed decision-making in clinical practice"
         ],
         "ai_approaches": [
-            "Transformer models for trial document analysis",
-            "Natural language generation for trial summary creation",
+            "Generative AI models for trial document analysis",
+            "Natural language generation through Generative AI for trial summary creation",
             "Knowledge graph neural networks for trial relationship modeling",
             "Time series analysis for trial progression tracking",
             "Few-shot learning for rare disease trials",
@@ -2117,7 +2239,7 @@ use_cases = [
         "ai_approaches": [
             "Graph neural networks for drug-target interactions",
             "Knowledge graph embedding models",
-            "Natural language processing for biomedical literature",
+            "Natural language processing through Generative AI for biomedical literature",
             "Multi-task learning for effect prediction",
             "Transfer learning from known drug mechanisms",
             "Few-shot learning for rare diseases",
@@ -2143,9 +2265,14 @@ use_cases = [
             "Increased success rate in drug development pipeline"
         ],
         "ai_approaches": [
-            "GenAI tools",
-            "Machine learning for process optimization and outcome prediction",
-            "Generative models for creating development scenarios"
+            "Graph neural networks for site relationship modeling",
+            "Natural language processing through Generative AI for site capability analysis",
+            "Multi-objective optimization for site selection",
+            "Transfer learning from successful trials",
+            "Few-shot learning for rare disease trials",
+            "Attention mechanisms for key site characteristics",
+            "Spatio-temporal analysis for site performance",
+            "Causal inference for site success factors"
         ]
     },
     {
@@ -2166,8 +2293,7 @@ use_cases = [
             "Enhanced brand perception among healthcare providers"
         ],
         "ai_approaches": [
-            "GenAI tools",
-            "Natural Language Generation for content creation",
+            "Generative AI for bulding personalised content tools",
             "Machine learning for channel optimization and engagement prediction"
         ]
     },
@@ -2189,9 +2315,14 @@ use_cases = [
             "Improved patient safety and reduced liability risks"
         ],
         "ai_approaches": [
-            "GenAI tools",
-            "Machine learning for risk factor identification and prediction",
-            "Natural Language Processing for analyzing clinical reports and literature"
+            "Generative AI models for medical literature analysis",
+            "Graph neural networks for adverse event relationships",
+            "Bayesian neural networks for uncertainty quantification",
+            "Natural language processing through Generative AI for patient reports",
+            "Multi-task learning for different safety signals",
+            "Few-shot learning for rare side effects",
+            "Time series analysis for temporal patterns",
+            "Causal inference for adverse event attribution"
         ]
     },
     {
@@ -2214,7 +2345,7 @@ use_cases = [
         "ai_approaches": [
             "Predictive analytics for customer preferences",
             "Integration with customer data platforms",
-            "GenAI generated content"
+            "Generative AI for personalised multi-modal content"
         ]
     },
     {
@@ -2235,8 +2366,14 @@ use_cases = [
             "Improved compliance with environmental regulations"
         ],
         "ai_approaches": [
-            "GenAI facilities for report creation",
-            "Predictive models for environmental impact assessment"
+            "Natural language processing through Generative AI for impact analysis",
+            "Graph neural networks for supply chain tracking",
+            "Multi-task learning for sustainability metrics",
+            "Transfer learning from sustainability reports",
+            "Few-shot learning for new regulations",
+            "Time series forecasting for environmental impact",
+            "Causal inference for initiative effectiveness",
+            "Natural language generation through Generative AI for report creation"
         ]
     }
 ]
