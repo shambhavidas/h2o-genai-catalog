@@ -365,6 +365,64 @@
             }
         }
 
+        /* Tag - Searching */
+
+        .tag-search-container {
+            width: 75%;
+            margin: 20px auto;
+            margin-left: 14%;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .active-tags {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .active-tag {
+            background: #ffc107;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .active-tag .remove-tag {
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 2px;
+        }
+
+        .active-tag .remove-tag:hover {
+            color: #dc3545;
+        }
+
+        .popular-tags {
+            margin-top: 15px;
+        }
+
+        .tag-suggestion {
+            cursor: pointer;
+            display: inline-block;
+            margin: 4px;
+            padding: 3px 8px;
+            background: #e9ecef;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            transition: background-color 0.2s;
+        }
+
+        .tag-suggestion:hover {
+            background: #ffc107;
+        }
+
     </style>
 </head>
 
@@ -398,7 +456,7 @@
         <div class="search-sort-container">
             <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input type="text" class="search-input" placeholder="Search use cases..." id="searchInput">
+                <input type="text" class="search-input" placeholder="Search use cases by title or description..." id="searchInput">
             </div>
             <div class="sort-container">
                 <select class="form-select" id="sortSelect">
@@ -408,6 +466,21 @@
                     <option value="industryAsc">Industry (A-Z)</option>
                     <option value="industryDesc">Industry (Z-A)</option>
                 </select>
+            </div>
+        </div>
+
+        <!-- Tag search container -->
+        <div class="tag-search-container">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-tags me-2"></i>
+                <input type="text" class="form-control" id="tagSearchInput" placeholder="Search by tags...">
+            </div>
+            <div class="active-tags" id="activeTags">
+                <!-- Active tags will be added here dynamically -->
+            </div>
+            <div class="popular-tags" id="popularTags">
+                <small class="text-muted">Popular tags:</small>
+                <!-- Popular tags will be added here dynamically -->
             </div>
         </div>
 
@@ -554,6 +627,8 @@
         let selectedUseCases = new Set();
         let filteredUseCases = [];
         let currentSort = 'default';
+        let activeTagFilters = new Set();
+        let allTags = new Set();
 
         // Function to create cards
         function createCards(useCasesToShow = use_cases) {
@@ -569,7 +644,7 @@
                 div.setAttribute('data-index', index);
                 
                 let tagsHtml = useCase.tags.map(tag => 
-                    `<span class="badge1">${tag}</span>`
+                    `<span class="badge1" onclick="addTagFilter('${tag}'); event.stopPropagation();">${tag}</span>`
                 ).join(' ');
                 
                 div.innerHTML = `
@@ -582,9 +657,8 @@
                     </div>
                 `;
                 
-                // Click event to show modal (exclude checkbox from triggering)
                 div.addEventListener('click', (e) => {
-                    if (!e.target.classList.contains('card-checkbox')) {
+                    if (!e.target.classList.contains('card-checkbox') && !e.target.classList.contains('badge1')) {
                         showModal(useCase);
                     }
                 });
@@ -592,6 +666,12 @@
                 container.appendChild(div);
             });
         }
+
+        // Initialize tags on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTags();
+            createCards();
+        });
 
         // Function to update the counter
         function updateCounter() {
@@ -630,9 +710,102 @@
             createCards(casesToSort);
         }
 
+                // Function to initialize tags
+                function initializeTags() {
+            // Collect all unique tags
+            use_cases.forEach(useCase => {
+                useCase.tags.forEach(tag => allTags.add(tag));
+            });
+            
+            // Display popular tags
+            updatePopularTags();
+        }
+
+        // Function to update popular tags display
+        function updatePopularTags() {
+            const popularTagsContainer = document.getElementById('popularTags');
+            const popularTagsHtml = Array.from(allTags)
+                .slice(0, 8) // Show top 8 tags
+                .map(tag => `
+                    <span class="tag-suggestion" onclick="addTagFilter('${tag}')">
+                        ${tag}
+                    </span>
+                `).join('');
+            
+            popularTagsContainer.innerHTML = `
+                <small class="text-muted">Popular tags:</small> 
+                ${popularTagsHtml}
+            `;
+        }
+
+        // Function to add tag filter
+        function addTagFilter(tag) {
+            if (!activeTagFilters.has(tag)) {
+                activeTagFilters.add(tag);
+                updateActiveTagsDisplay();
+                applyFilters();
+            }
+        }
+
+        // Function to remove tag filter
+        function removeTagFilter(tag) {
+            activeTagFilters.delete(tag);
+            updateActiveTagsDisplay();
+            applyFilters();
+        }
+
+        // Function to update active tags display
+        function updateActiveTagsDisplay() {
+            const activeTagsContainer = document.getElementById('activeTags');
+            activeTagsContainer.innerHTML = Array.from(activeTagFilters)
+                .map(tag => `
+                    <span class="active-tag">
+                        ${tag}
+                        <span class="remove-tag" onclick="removeTagFilter('${tag}')">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    </span>
+                `).join('');
+        }
+
+        // Modified search function to include tag filtering
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtered = use_cases.filter(useCase => {
+                // Text search match
+                const searchIn = `${useCase.title} ${useCase.tagline}`.toLowerCase();
+                const textMatch = searchIn.includes(searchTerm);
+                
+                // Tag filter match
+                const tagMatch = activeTagFilters.size === 0 || 
+                    Array.from(activeTagFilters).every(tag => 
+                        useCase.tags.includes(tag)
+                    );
+                
+                return textMatch && tagMatch;
+            });
+            
+            sortUseCases(filtered);
+        }
+
         // Event listeners
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            searchUseCases(e.target.value);
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
+        
+        document.getElementById('tagSearchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const matchingTags = Array.from(allTags)
+                .filter(tag => tag.toLowerCase().includes(searchTerm));
+            
+            const popularTagsContainer = document.getElementById('popularTags');
+            popularTagsContainer.innerHTML = `
+                <small class="text-muted">Matching tags:</small> 
+                ${matchingTags.map(tag => `
+                    <span class="tag-suggestion" onclick="addTagFilter('${tag}')">
+                        ${tag}
+                    </span>
+                `).join('')}
+            `;
         });
 
         document.getElementById('sortSelect').addEventListener('change', function(e) {
