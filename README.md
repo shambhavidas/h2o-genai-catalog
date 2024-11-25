@@ -89,14 +89,6 @@ Share your AI implementation success story with the community. Follow these step
 }
 ```
 
-## 📧 Contact
-
-Have a use case to share or feedback to provide? Reach out to our team:
-
-* **Email**: 
-  * shambhavi.das@h2o.ai
-  * jordan.seow@h2o.ai
-
 ## 🔒 Data Usage
 
 * All shared use cases are reviewed for quality
